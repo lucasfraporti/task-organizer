@@ -1,12 +1,15 @@
 import styles from "./Tasks.module.css";
 
-import { useContext } from "react";
+// import { useContext } from "react";
 import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill } from "react-icons/bs";
 
-import { TodoContext } from "../../context/TodoContext";
+// import { TodoContext } from "../../context/TodoContext";
+
+import { useTodoContext } from "../../hooks/useTodoContext";
 
 const Tasks = () => {
-  const { todos, setTodos } = useContext(TodoContext);
+  // const { todos, setTodos } = useContext(TodoContext);
+  const { todos, setTodos } = useTodoContext();
 
   const handleDelete = async (id) => {
     await fetch(`http://localhost:3000/todos/${id}`, {

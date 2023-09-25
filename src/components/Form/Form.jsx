@@ -1,13 +1,17 @@
 import styles from "./Form.module.css";
 
-import { useState, useContext } from "react";
+// import { useState, useContext } from "react";
+import { useState } from "react";
 
-import { TodoContext } from "../../context/TodoContext";
+// import { TodoContext } from "../../context/TodoContext";
+
+import { useTodoContext } from "../../hooks/useTodoContext";
 
 const Form = () => {
   const [title, setTitle] = useState("");
   const [time, setTime] = useState("");
-  const { setTodos } = useContext(TodoContext);
+  // const { setTodos } = useContext(TodoContext);
+  const { setTodos } = useTodoContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

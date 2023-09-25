@@ -1,16 +1,20 @@
 import styles from "./Home.module.css";
 
-import { useState, useEffect, useContext } from "react";
+// import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "../../components/Header/Header";
 import Form from "../../components/Form/Form";
 import Tasks from "../../components/Tasks/Tasks";
 
-import { TodoContext } from "../../context/TodoContext";
+// import { TodoContext } from "../../context/TodoContext";
+
+import { useTodoContext } from "../../hooks/useTodoContext";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  const { setTodos } = useContext(TodoContext);
+  // const { setTodos } = useContext(TodoContext);
+  const { setTodos } = useTodoContext();
 
   // Carregando no carregamento da página
   useEffect(() => {
