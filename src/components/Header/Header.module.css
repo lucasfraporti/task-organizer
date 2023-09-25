@@ -1,0 +1,10 @@
+.todo_header {
+  padding: 0.5em;
+  border-bottom: 1px solid #2c3035;
+  text-align: center;
+}
+
+.todo_header h1 {
+  padding: 15px;
+  margin: 0;
+}
