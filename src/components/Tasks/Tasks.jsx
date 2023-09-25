@@ -29,7 +29,7 @@ const Tasks = () => {
       body: JSON.stringify(todo),
     });
     setTodos((prevState) =>
-      prevState.map((todo) => (todo.id === data.id ? (todo = data) : todo)),
+      prevState.map((todo) => (todo.id === data.id ? (todo = data) : todo))
     );
   };
 
@@ -42,7 +42,12 @@ const Tasks = () => {
           <div className={styles.todo_tasks} key={todo.id}>
             <h3 className={todo.done ? "todo_done" : ""}>{todo.title}</h3>
 
-            <p>Duração: {todo.time} hora(s)</p>
+            <p>
+              Duração:
+              {todo.time > "01:00"
+                ? ` ${todo.time} horas`
+                : ` ${todo.time} hora`}
+            </p>
 
             <div className="actions">
               <span onClick={() => handleEdit(todo)}>

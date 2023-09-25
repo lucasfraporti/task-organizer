@@ -58,7 +58,7 @@ const Form = () => {
           <label>
             <span>Duração da tarefa</span>
             <input
-              type="number"
+              type="time"
               name="time"
               placeholder="Duração da tarefa em horas"
               onChange={(e) => setTime(e.target.value)}
